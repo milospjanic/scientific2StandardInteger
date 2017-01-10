@@ -24,7 +24,7 @@ NM_000041 110 74 59 68 59 81
 </pre>
 
 Use awk code, save as an awk script and run with awk
-
+<pre lang="awk"><code>
 #condition if line matches regex e+, e-, E+ or E- 
 {
 /[eE][+-]/
@@ -47,10 +47,13 @@ Use awk code, save as an awk script and run with awk
 #print whole line and new line for line do not matching a condition 
 {printf $0"\n"}
 }
+
+</code></pre>
+
 Script will match those lines that contain regex e+, e-, E+ or E-, and then go through each field of that line. If a field matches ^[0-9]*[eE][+-][0-9]*$, then substitute with an integer. Else only print field. Outside of the condition, print whole line and newline character.
 
 Example output:
-
+<pre>
 awk -f script.awk file.txt 
 NM_000033 104 100 62 87 111 90 
 NM_000036 0 0 1 3 0 400000 
@@ -68,3 +71,4 @@ NM_000040 0 0 0 0 0 0
 NM_001011880 0 3 16 0 4 3 
 NM_001024452 0 1 0 0 0 0 
 NM_000041 110 74 59 68 59 81 
+</pre>
