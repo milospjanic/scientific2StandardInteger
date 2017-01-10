@@ -53,7 +53,6 @@ Use awk code, save as an awk script and run with awk
 Script will match those lines that contain regex e+, e-, E+ or E-, and then go through each field of that line. If a field matches ^[0-9]*[eE][+-][0-9]*$, then substitute with an integer. Else only print field. Outside of the condition, print whole line and newline character.
 
 Example output:
-
 <pre>
 awk -f script.awk file.txt 
 NM_000033 104 100 62 87 111 90 
